@@ -14,10 +14,10 @@ namespace HuPurchaseTool
     {
         const int NUMBER_VALUE = 10;
         const string PASSWORD = "Hu";
-        string lastPass = "";
         public frmLogin()
         {
             InitializeComponent();
+            HUUserManagement.GetInstance();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -25,9 +25,9 @@ namespace HuPurchaseTool
         }
 
         private void loginPurchase() {
-            if (txtPassword.Text == PASSWORD + lastPass)
+            if (HUUserManagement.GetInstance().checkUserPassword(txtUser.Text, txtPassword.Text) )
             {
-                var purchaseForm = new frmPurchase();
+                var purchaseForm = new frmPurchase(txtUser.Text);
                 this.Hide();
                 purchaseForm.ShowDialog();
                 this.Close();
@@ -47,6 +47,11 @@ namespace HuPurchaseTool
             if (e.KeyChar == Convert.ToChar(Keys.Enter)) {
                 loginPurchase();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

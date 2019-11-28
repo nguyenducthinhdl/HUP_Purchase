@@ -16,7 +16,7 @@ namespace HuPurchaseTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPurchase());
+            Application.Run(new frmLogin());
         }
     }
 }

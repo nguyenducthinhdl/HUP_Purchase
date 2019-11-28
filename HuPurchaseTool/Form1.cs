@@ -25,9 +25,13 @@ namespace HuPurchaseTool
         const string ENCRYPT_PASS = "TOXIC";
         bool processing = false;
 
-        public frmPurchase()
+        public frmPurchase(string user)
         {
             InitializeComponent();
+            if (HUUserManagement.GetInstance().checkUserPermission(user, "ultimate"))
+            {
+                btnUserSetting.Visible = true;
+            }
         }
 
         private string makeURL(string code, string size, bool incognito = true)
@@ -233,6 +237,14 @@ namespace HuPurchaseTool
                 txtSize.AppendText(validate_sizes[i]);
             }
             //txtSize.Text = m;
+        }
+
+        private void btnUserSetting_Click(object sender, EventArgs e)
+        {
+            var usermanagerForm = new UserManagement();
+            this.Hide();
+            usermanagerForm.ShowDialog();
+            this.Show();
         }
     }
 }

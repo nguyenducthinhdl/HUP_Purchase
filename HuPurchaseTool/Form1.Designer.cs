@@ -46,6 +46,10 @@
             this.txtDelayTab = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnValidateSize = new System.Windows.Forms.Button();
+            this.btnUserSetting = new System.Windows.Forms.Button();
+            this.txtBatchSize = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkUseBatch = new System.Windows.Forms.CheckBox();
             this.grpOption.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,7 +190,7 @@
             // chkChromeCMD
             // 
             this.chkChromeCMD.AutoSize = true;
-            this.chkChromeCMD.Location = new System.Drawing.Point(639, 23);
+            this.chkChromeCMD.Location = new System.Drawing.Point(639, 17);
             this.chkChromeCMD.Name = "chkChromeCMD";
             this.chkChromeCMD.Size = new System.Drawing.Size(144, 21);
             this.chkChromeCMD.TabIndex = 10;
@@ -198,7 +202,7 @@
             this.chkCheckSize.AutoSize = true;
             this.chkCheckSize.Checked = true;
             this.chkCheckSize.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkCheckSize.Location = new System.Drawing.Point(639, 50);
+            this.chkCheckSize.Location = new System.Drawing.Point(639, 41);
             this.chkCheckSize.Name = "chkCheckSize";
             this.chkCheckSize.Size = new System.Drawing.Size(112, 21);
             this.chkCheckSize.TabIndex = 11;
@@ -207,16 +211,16 @@
             // 
             // txtDelayTab
             // 
-            this.txtDelayTab.Location = new System.Drawing.Point(539, 32);
+            this.txtDelayTab.Location = new System.Drawing.Point(537, 23);
             this.txtDelayTab.Name = "txtDelayTab";
             this.txtDelayTab.Size = new System.Drawing.Size(73, 22);
             this.txtDelayTab.TabIndex = 12;
-            this.txtDelayTab.Text = "1";
+            this.txtDelayTab.Text = "3";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(453, 35);
+            this.label6.Location = new System.Drawing.Point(451, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 9;
@@ -233,11 +237,54 @@
             this.btnValidateSize.UseVisualStyleBackColor = true;
             this.btnValidateSize.Click += new System.EventHandler(this.btnValidateSize_Click);
             // 
+            // btnUserSetting
+            // 
+            this.btnUserSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserSetting.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnUserSetting.Location = new System.Drawing.Point(632, 581);
+            this.btnUserSetting.Name = "btnUserSetting";
+            this.btnUserSetting.Size = new System.Drawing.Size(151, 52);
+            this.btnUserSetting.TabIndex = 0;
+            this.btnUserSetting.Text = "User Setting";
+            this.btnUserSetting.UseVisualStyleBackColor = true;
+            this.btnUserSetting.Visible = false;
+            this.btnUserSetting.Click += new System.EventHandler(this.btnUserSetting_Click);
+            // 
+            // txtBatchSize
+            // 
+            this.txtBatchSize.Location = new System.Drawing.Point(537, 51);
+            this.txtBatchSize.Name = "txtBatchSize";
+            this.txtBatchSize.Size = new System.Drawing.Size(73, 22);
+            this.txtBatchSize.TabIndex = 15;
+            this.txtBatchSize.Text = "10";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(451, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 17);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Batch Size";
+            // 
+            // chkUseBatch
+            // 
+            this.chkUseBatch.AutoSize = true;
+            this.chkUseBatch.Location = new System.Drawing.Point(639, 68);
+            this.chkUseBatch.Name = "chkUseBatch";
+            this.chkUseBatch.Size = new System.Drawing.Size(95, 21);
+            this.chkUseBatch.TabIndex = 16;
+            this.chkUseBatch.Text = "Use Batch";
+            this.chkUseBatch.UseVisualStyleBackColor = true;
+            // 
             // frmPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 662);
+            this.ClientSize = new System.Drawing.Size(793, 662);
+            this.Controls.Add(this.chkUseBatch);
+            this.Controls.Add(this.txtBatchSize);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnValidateSize);
             this.Controls.Add(this.txtDelayTab);
             this.Controls.Add(this.chkCheckSize);
@@ -253,6 +300,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPurChaseCode);
             this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnUserSetting);
             this.Controls.Add(this.btnOpenURL);
             this.Name = "frmPurchase";
             this.Text = "HuPurchaseTool";
@@ -284,6 +332,10 @@
         private System.Windows.Forms.TextBox txtDelayTab;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnValidateSize;
+        private System.Windows.Forms.Button btnUserSetting;
+        private System.Windows.Forms.TextBox txtBatchSize;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkUseBatch;
     }
 }
 
