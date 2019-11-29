@@ -70,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCheckPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckPrice.Designer.cs">
+      <DependentUpon>frmCheckPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="HuDeEncrypt.cs" />
     <Compile Include="HuUserPermission.cs" />
     <Compile Include="LoginForm.cs">
@@ -88,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckPrice.resx">
+      <DependentUpon>frmCheckPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

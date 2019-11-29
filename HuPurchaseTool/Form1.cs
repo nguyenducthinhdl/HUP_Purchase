@@ -113,7 +113,6 @@ namespace HuPurchaseTool
         {
             txtPurChaseCode.Text = "";
             txtSize.Text = "";
-            txtPrice.Text = "";
         }
 
         private void btnOpenURL_Click(object sender, EventArgs e)
@@ -244,6 +243,14 @@ namespace HuPurchaseTool
             var usermanagerForm = new UserManagement();
             this.Hide();
             usermanagerForm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCheckPrice_Click(object sender, EventArgs e)
+        {
+            var checkPriceForm = new frmCheckPrice();
+            this.Hide();
+            checkPriceForm.ShowDialog();
             this.Show();
         }
     }
