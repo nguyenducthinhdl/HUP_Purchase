@@ -26,7 +26,8 @@ namespace HuPurchaseTool
         private string makeCheckPriceURL(string code, out string error) {
             error = "";
             string ret = "";
-            var url = "https://www.adidas.com/api/products/" + code + "?sitePath=" + (rdbOptionUK.Checked ? "uk" : "us");
+            string uk_begin = "https://www.adidas.co.uk/api/products/";
+            var url = (rdbOptionUK.Checked ? uk_begin : "https://www.adidas.com/api/products/") + code + "?sitePath=" + (rdbOptionUK.Checked ? "uk" : "us");
             try
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -65,7 +66,8 @@ namespace HuPurchaseTool
         {
             var ret = new List<string> { };
             error = "";
-            var url = "https://www.adidas.com/api/products/" + code +  "/availability?sitePath=" + (rdbOptionUK.Checked?"uk":"us");
+            string uk_begin = "https://www.adidas.co.uk/api/products/";
+            var url = (rdbOptionUK.Checked ? uk_begin : "https://www.adidas.com/api/products/") + code +  "/availability?sitePath=" + (rdbOptionUK.Checked?"uk":"us");
             try
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -159,7 +161,7 @@ namespace HuPurchaseTool
                     string code = dgvr.Cells[0].FormattedValue.ToString();
                     var error = "";
                     var listSize = makeCheckSizeURL(code, out error);
-                    var strListSize = string.Join("\n", listSize);
+                    var strListSize = string.Join(", \n", listSize);
                     dgvr.Cells[3].Value = "";
                     dgvr.Cells[3].Style.BackColor = Color.White;
                     if (error.Length > 0)
